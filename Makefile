@@ -5,10 +5,13 @@ CFLAGS = -Werror -Wall
 
 all: bin/main
 
-bin/main: build/main.o
+bin/main: build/main.o build/func.o
 	$(CC) $(CFLAGS) -o $@ $^ 
 
 build/main.o: src/main.cpp
+	$(CC) $(CFLAGS) -MMD -c -o $@ $<
+
+build/func.o: src/func.cpp
 	$(CC) $(CFLAGS) -MMD -c -o $@ $<
 
 
