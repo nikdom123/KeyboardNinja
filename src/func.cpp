@@ -5,7 +5,7 @@ void Eng()
     srand(time(NULL));
     int l = rand() % 10, k = 0;
     FILE* eng;
-    eng = fopen("src/eng.txt", "r");
+    eng = fopen("Text/eng.txt", "r");
     char sim;
     string str, uns;
     while ((sim = getc(eng)) != EOF) {
@@ -41,7 +41,7 @@ void Rus()
     int l = rand() % 10, k = 0;
     cout << endl << l << endl;
     FILE* rus;
-    rus = fopen("src/rus.txt", "r");
+    rus = fopen("Text/rus.txt", "r");
     char sim;
     string str, uns;
     while ((sim = getc(rus)) != EOF) {
