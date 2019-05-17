@@ -1,13 +1,13 @@
 #ifndef FUNC_H
 #define FUNC_H
 #include <iostream>
-#include <string>
-#include <stdio.h>
-#include <time.h>
 #include <locale.h>
+#include <stdio.h>
+#include <string>
+#include <time.h>
 using namespace std;
 
 void Eng();
-//void Rus();
+void Rus();
 
 #endif
