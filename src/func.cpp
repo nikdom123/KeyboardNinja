@@ -3,7 +3,7 @@
 void Eng()
 {
     srand(time(NULL));
-    int l = rand() % 11, k = 0;
+    int l = rand() % 10, k = 0;
     FILE* eng;
     eng = fopen("src/eng.txt", "r");
     char sim;
@@ -38,7 +38,7 @@ void Rus()
 {
     system("chcp 1251");
     srand(time(NULL));
-    int l = rand() % 11, k = 0;
+    int l = rand() % 10, k = 0;
     cout << endl << l << endl;
     FILE* rus;
     rus = fopen("src/rus.txt", "r");
