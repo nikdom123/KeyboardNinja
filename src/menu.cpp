@@ -57,6 +57,13 @@ void Level(int lang)
         }
         SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 15));
     }
+    system("CLS");
+    position = {0, Y};
+    SetConsoleCursorPosition(hConsole, position);
+    if (lang == 1)
+        Eng();
+    else
+        Rus();
 }
 
 void Language()
