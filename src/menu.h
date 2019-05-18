@@ -5,7 +5,7 @@
 #include <windows.h>
 using namespace std;
 
-void Level();
+void Level(int lang);
 void Language();
 void Menu();
 
