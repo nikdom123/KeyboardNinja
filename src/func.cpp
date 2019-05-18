@@ -7,7 +7,7 @@ void Eng()
     FILE* eng;
     eng = fopen("Text/eng.txt", "r");
     char sim;
-    string str, uns;
+    string str; //, uns;
     while ((sim = getc(eng)) != EOF) {
         if (k == l) {
             while (sim != '\n' && sim != EOF) {
@@ -22,14 +22,19 @@ void Eng()
     fclose(eng);
     cout << str;
     cout << "\n";
-    getline(cin, uns);
-
-    cout << uns;
+    char ch;
     int n = str.size();
     k = 0;
-    for (l = 0; l < n; l++) {
-        if (str[l] != uns[l])
-            k++;
+    l = 0;
+    while (l < n) {
+        ch = _getch();
+        if (ch == 27) {
+            break;
+        }
+        if (str[l] == ch) {
+            l++;
+            cout << ch;
+        }
     }
     cout << k << endl;
     system("pause");
@@ -43,7 +48,7 @@ void Rus()
     FILE* rus;
     rus = fopen("Text/rus.txt", "r");
     char sim;
-    string str, uns;
+    string str; //, uns;
     while ((sim = getc(rus)) != EOF) {
         if (k == l) {
             while (sim != '\n' && sim != EOF) {
@@ -58,13 +63,19 @@ void Rus()
     fclose(rus);
     cout << str;
     cout << "\n";
-    getline(cin, uns);
-    cout << uns;
+    char ch;
     int n = str.size();
     k = 0;
-    for (l = 0; l < n; l++) {
-        if (str[l] != uns[l])
-            k++;
+    l = 0;
+    while (l < n) {
+        ch = _getch();
+        if (ch == 27) {
+            break;
+        }
+        if (str[l] == ch) {
+            l++;
+            cout << ch;
+        }
     }
     cout << k << endl;
     system("pause");
