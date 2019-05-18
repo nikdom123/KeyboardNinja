@@ -28,11 +28,11 @@ void Eng()
     l = 0;
     while (l < n) {
         ch = _getch();
-        if (ch == 27) {
-            break;
+        if (ch == 27) { // if the key Esc is pressed
+            break;      // then exit
         }
-        if (str[l] == ch) {
-            l++;
+        if (str[l] == ch) { // if the correct character is entered
+            l++;            // then text promotion
             cout << ch;
         }
     }
@@ -69,11 +69,11 @@ void Rus()
     l = 0;
     while (l < n) {
         ch = _getch();
-        if (ch == 27) {
-            break;
+        if (ch == 27) { // if the key Esc is pressed
+            break;      // then exit
         }
-        if (str[l] == ch) {
-            l++;
+        if (str[l] == ch) { // if the correct character is entered
+            l++;            // then text promotion
             cout << ch;
         }
     }
