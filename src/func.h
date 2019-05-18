@@ -1,5 +1,6 @@
 #ifndef FUNC_H
 #define FUNC_H
+#include <conio.h>
 #include <iostream>
 #include <locale.h>
 #include <stdio.h>
