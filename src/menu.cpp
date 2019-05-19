@@ -120,6 +120,8 @@ void Language()
         }
         SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 15));
     }
+    if (i == 3)
+        exit(1);
     Level(i);
 }
 
