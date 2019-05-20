@@ -23,7 +23,7 @@ void Eng()
     cout << str;
     cout << "\n";
     char ch;
-    int n = str.size(), mistakes = 0;
+    int n = str.size(), mistakes = 0, series = 0, max_series = 0;
     k = 0;
     l = 0;
     clock_t start;
@@ -37,12 +37,20 @@ void Eng()
         if (str[l] == ch) { // if the correct character is entered
             l++;            // then text promotion
             cout << ch;
-        } else
+            series++;
+        } else {
             mistakes++;
+            if (series > max_series)
+                max_series = series;
+            series = 0;
+        }
     }
+    if (series > max_series)
+        max_series = series;
     duration = (clock() - start) / (double)CLOCKS_PER_SEC;
     cout << "\n\n number of mistakes: " << mistakes << endl;
     cout << " time: " << duration << " seconds" << endl;
+    cout << " maximum error free series: " << max_series << endl;
     system("pause");
 }
 void Rus()
@@ -69,7 +77,7 @@ void Rus()
     cout << str;
     cout << "\n";
     char ch;
-    int n = str.size(), mistakes = 0;
+    int n = str.size(), mistakes = 0, series = 0, max_series = 0;
     k = 0;
     l = 0;
     clock_t start;
@@ -83,11 +91,19 @@ void Rus()
         if (str[l] == ch) { // if the correct character is entered
             l++;            // then text promotion
             cout << ch;
-        } else
+            series++;
+        } else {
             mistakes++;
+            if (series > max_series)
+                max_series = series;
+            series = 0;
+        }
     }
+    if (series > max_series)
+        max_series = series;
     duration = (clock() - start) / (double)CLOCKS_PER_SEC;
     cout << "\n\n number of mistakes: " << mistakes << endl;
     cout << " time: " << duration << " seconds" << endl;
+    cout << " maximum error free series: " << max_series << endl;
     system("pause");
 }
