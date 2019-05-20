@@ -23,7 +23,7 @@ void Eng()
     cout << str;
     cout << "\n";
     char ch;
-    int n = str.size();
+    int n = str.size(), mistakes = 0;
     k = 0;
     l = 0;
     while (l < n) {
@@ -34,9 +34,10 @@ void Eng()
         if (str[l] == ch) { // if the correct character is entered
             l++;            // then text promotion
             cout << ch;
-        }
+        } else
+            mistakes++;
     }
-    cout << k << endl;
+    cout << "\n number of mistakes: " << mistakes << endl;
     system("pause");
 }
 void Rus()
@@ -64,7 +65,7 @@ void Rus()
     cout << str;
     cout << "\n";
     char ch;
-    int n = str.size();
+    int n = str.size(), mistakes = 0;
     k = 0;
     l = 0;
     while (l < n) {
@@ -75,8 +76,9 @@ void Rus()
         if (str[l] == ch) { // if the correct character is entered
             l++;            // then text promotion
             cout << ch;
-        }
+        } else
+            mistakes++;
     }
-    cout << k << endl;
+    cout << "\n number of mistakes: " << mistakes << endl;
     system("pause");
 }
