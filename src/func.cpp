@@ -26,6 +26,9 @@ void Eng()
     int n = str.size(), mistakes = 0;
     k = 0;
     l = 0;
+    clock_t start;
+    double duration;
+    start = clock();
     while (l < n) {
         ch = _getch();
         if (ch == 27) { // if the key Esc is pressed
@@ -37,7 +40,9 @@ void Eng()
         } else
             mistakes++;
     }
-    cout << "\n number of mistakes: " << mistakes << endl;
+    duration = (clock() - start) / (double)CLOCKS_PER_SEC;
+    cout << "\n\n number of mistakes: " << mistakes << endl;
+    cout << " time: " << duration << " seconds" << endl;
     system("pause");
 }
 void Rus()
@@ -45,7 +50,6 @@ void Rus()
     system("chcp 1251");
     srand(time(NULL));
     int l = rand() % 10, k = 0;
-    cout << endl << l << endl;
     FILE* rus;
     rus = fopen("Text/rus.txt", "r");
     char sim;
@@ -68,6 +72,9 @@ void Rus()
     int n = str.size(), mistakes = 0;
     k = 0;
     l = 0;
+    clock_t start;
+    double duration;
+    start = clock();
     while (l < n) {
         ch = _getch();
         if (ch == 27) { // if the key Esc is pressed
@@ -79,6 +86,8 @@ void Rus()
         } else
             mistakes++;
     }
-    cout << "\n number of mistakes: " << mistakes << endl;
+    duration = (clock() - start) / (double)CLOCKS_PER_SEC;
+    cout << "\n\n number of mistakes: " << mistakes << endl;
+    cout << " time: " << duration << " seconds" << endl;
     system("pause");
 }
