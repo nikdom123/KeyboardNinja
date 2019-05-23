@@ -53,6 +53,8 @@ void Eng(int i)
         Ttime = (double)(sims * 1);
         break;
     case 2:
+        Tcorrect = 80;
+        Ttime = (double)(sims * 0.3);
         break;
     case 3:
         break;
@@ -127,6 +129,8 @@ void Rus(int i)
         Ttime = (double)(sims * 1);
         break;
     case 2:
+        Tcorrect = 80;
+        Ttime = (double)(sims * 0.3);
         break;
     case 3:
         break;
