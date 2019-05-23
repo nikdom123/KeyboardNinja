@@ -27,7 +27,7 @@ void Eng()
     k = 0;
     l = 0;
     clock_t start; // variable declaration
-    double duration, spers;
+    double duration, spers, correct;
     start = clock(); // start "timer"
     while (l < n) {
         ch = _getch();
@@ -51,10 +51,12 @@ void Eng()
         max_series = series;
     duration = (clock() - start) / (double)CLOCKS_PER_SEC;
     spers = sims / (duration / 60);
+    correct = ((double)(sims - mistakes) / sims) * 100;
     cout << "\n\n number of mistakes: " << mistakes << endl;
     cout << " time: " << duration << " seconds" << endl;
     cout << " maximum error free series: " << max_series << endl;
     cout << " symbols per minute: " << spers << endl;
+    cout << " Correctness : " << correct << " %" << endl;
     system("pause");
 }
 void Rus()
@@ -85,7 +87,7 @@ void Rus()
     k = 0;
     l = 0;
     clock_t start; // variable declaration
-    double duration, spers;
+    double duration, spers, correct;
     start = clock(); // start "timer"
     while (l < n) {
         ch = _getch();
@@ -109,9 +111,11 @@ void Rus()
         max_series = series;
     duration = (clock() - start) / (double)CLOCKS_PER_SEC;
     spers = sims / (duration / 60);
+    correct = ((double)(sims - mistakes) / sims) * 100;
     cout << "\n\n number of mistakes: " << mistakes << endl;
     cout << " time: " << duration << " seconds" << endl;
     cout << " maximum error free series: " << max_series << endl;
     cout << " symbols per minute: " << spers << endl;
+    cout << " Correctness : " << correct << " %" << endl;
     system("pause");
 }
