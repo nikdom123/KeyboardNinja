@@ -23,11 +23,11 @@ void Eng()
     cout << str;
     cout << "\n";
     char ch;
-    int n = str.size(), mistakes = 0, series = 0, max_series = 0;
+    int n = str.size(), mistakes = 0, series = 0, max_series = 0, sims = 0;
     k = 0;
     l = 0;
     clock_t start; // variable declaration
-    double duration;
+    double duration, spers;
     start = clock(); // start "timer"
     while (l < n) {
         ch = _getch();
@@ -36,10 +36,12 @@ void Eng()
         }
         if (str[l] == ch) { // if the correct character is entered
             l++;            // then text promotion,
+            sims++;
             cout << ch;
             series++;
         } else { // if the wrong key is pressed
             mistakes++;
+            sims++;
             if (series > max_series)
                 max_series = series;
             series = 0;
@@ -48,9 +50,11 @@ void Eng()
     if (series > max_series) // re-check: if no errors were made
         max_series = series;
     duration = (clock() - start) / (double)CLOCKS_PER_SEC;
+    spers = sims / (duration / 60);
     cout << "\n\n number of mistakes: " << mistakes << endl;
     cout << " time: " << duration << " seconds" << endl;
     cout << " maximum error free series: " << max_series << endl;
+    cout << " symbols per minute: " << spers << endl;
     system("pause");
 }
 void Rus()
@@ -77,11 +81,11 @@ void Rus()
     cout << str;
     cout << "\n";
     char ch;
-    int n = str.size(), mistakes = 0, series = 0, max_series = 0;
+    int n = str.size(), mistakes = 0, series = 0, max_series = 0, sims = 0;
     k = 0;
     l = 0;
     clock_t start; // variable declaration
-    double duration;
+    double duration, spers;
     start = clock(); // start "timer"
     while (l < n) {
         ch = _getch();
@@ -90,10 +94,12 @@ void Rus()
         }
         if (str[l] == ch) { // if the correct character is entered
             l++;            // then text promotion,
+            sims++;
             cout << ch;
             series++;
         } else { // if the wrong key is pressed
             mistakes++;
+            sims++;
             if (series > max_series)
                 max_series = series;
             series = 0;
@@ -102,8 +108,10 @@ void Rus()
     if (series > max_series) // re-check: if no errors were made
         max_series = series;
     duration = (clock() - start) / (double)CLOCKS_PER_SEC;
+    spers = sims / (duration / 60);
     cout << "\n\n number of mistakes: " << mistakes << endl;
     cout << " time: " << duration << " seconds" << endl;
     cout << " maximum error free series: " << max_series << endl;
+    cout << " symbols per minute: " << spers << endl;
     system("pause");
 }
