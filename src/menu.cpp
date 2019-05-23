@@ -66,7 +66,7 @@ void Level(int lang)
         Rus();
 }
 
-void Language()
+int Language()
 {
     char ch = 0;
     system("CLS");
@@ -123,10 +123,14 @@ void Language()
     if (i == 3)
         exit(1);
     Level(i);
+    return i;
 }
 
 void Menu()
 {
-    Language();
+    int i;
+    while (i != 3) {
+        i = Language();
+    }
     system("pause");
 }

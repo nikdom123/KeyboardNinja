@@ -59,6 +59,7 @@ void Eng()
     cout << " Correctness : " << correct << " %" << endl;
     system("pause");
 }
+
 void Rus()
 {
     system("chcp 1251");

@@ -7,7 +7,7 @@
 using namespace std;
 
 void Level(int lang);
-void Language();
+int Language();
 void Menu();
 
 #endif
