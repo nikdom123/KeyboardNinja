@@ -61,9 +61,9 @@ void Level(int lang)
     position = {0, Y};
     SetConsoleCursorPosition(hConsole, position);
     if (lang == 1)
-        Eng();
+        Eng(i);
     else
-        Rus();
+        Rus(i);
 }
 
 int Language()

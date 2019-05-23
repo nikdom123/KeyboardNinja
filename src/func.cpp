@@ -1,6 +1,6 @@
 #include "func.h"
 
-void Eng()
+void Eng(int i)
 {
     srand(time(NULL));
     int l = rand() % 10, k = 0;
@@ -27,7 +27,7 @@ void Eng()
     k = 0;
     l = 0;
     clock_t start; // variable declaration
-    double duration, spers, correct;
+    double duration, spers, correct, Tcorrect, Ttime;
     start = clock(); // start "timer"
     while (l < n) {
         ch = _getch();
@@ -47,20 +47,33 @@ void Eng()
             series = 0;
         }
     }
+    switch (i) {
+    case 1:
+        Tcorrect = 50;
+        Ttime = (double)(sims * 1);
+        break;
+    case 2:
+        break;
+    case 3:
+        break;
+    }
     if (series > max_series) // re-check: if no errors were made
         max_series = series;
     duration = (clock() - start) / (double)CLOCKS_PER_SEC;
     spers = sims / (duration / 60);
     correct = ((double)(sims - mistakes) / sims) * 100;
-    cout << "\n\n number of mistakes: " << mistakes << endl;
+    cout << "\n\n Teoretical correctness: " << Tcorrect << endl;
+    cout << "Teoretical time" << Ttime << endl;
+
+    cout << "\n\n Correctness : " << correct << " %" << endl;
     cout << " time: " << duration << " seconds" << endl;
+    cout << " number of mistakes: " << mistakes << endl;
     cout << " maximum error free series: " << max_series << endl;
     cout << " symbols per minute: " << spers << endl;
-    cout << " Correctness : " << correct << " %" << endl;
     system("pause");
 }
 
-void Rus()
+void Rus(int i)
 {
     system("chcp 1251");
     srand(time(NULL));
@@ -88,7 +101,7 @@ void Rus()
     k = 0;
     l = 0;
     clock_t start; // variable declaration
-    double duration, spers, correct;
+    double duration, spers, correct, Tcorrect, Ttime;
     start = clock(); // start "timer"
     while (l < n) {
         ch = _getch();
@@ -108,15 +121,28 @@ void Rus()
             series = 0;
         }
     }
+    switch (i) {
+    case 1:
+        Tcorrect = 50;
+        Ttime = (double)(sims * 1);
+        break;
+    case 2:
+        break;
+    case 3:
+        break;
+    }
     if (series > max_series) // re-check: if no errors were made
         max_series = series;
     duration = (clock() - start) / (double)CLOCKS_PER_SEC;
     spers = sims / (duration / 60);
     correct = ((double)(sims - mistakes) / sims) * 100;
-    cout << "\n\n number of mistakes: " << mistakes << endl;
+    cout << "\n\n Teoretical correctness: " << Tcorrect << endl;
+    cout << "Teoretical time" << Ttime << endl;
+
+    cout << "\n\n Correctness : " << correct << " %" << endl;
     cout << " time: " << duration << " seconds" << endl;
+    cout << " number of mistakes: " << mistakes << endl;
     cout << " maximum error free series: " << max_series << endl;
     cout << " symbols per minute: " << spers << endl;
-    cout << " Correctness : " << correct << " %" << endl;
     system("pause");
 }

@@ -8,7 +8,7 @@
 #include <time.h>
 using namespace std;
 
-void Eng();
-void Rus();
+void Eng(int i);
+void Rus(int i);
 
 #endif
