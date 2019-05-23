@@ -57,6 +57,8 @@ void Eng(int i)
         Ttime = (double)(sims * 0.3);
         break;
     case 3:
+        Tcorrect = 99;
+        Ttime = (double)(sims * 0.1);
         break;
     }
     if (series > max_series) // re-check: if no errors were made
@@ -133,6 +135,8 @@ void Rus(int i)
         Ttime = (double)(sims * 0.3);
         break;
     case 3:
+        Tcorrect = 99;
+        Ttime = (double)(sims * 0.1);
         break;
     }
     if (series > max_series) // re-check: if no errors were made
