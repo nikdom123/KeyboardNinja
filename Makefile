@@ -1,5 +1,4 @@
- 
- CC = g++
+CC = g++
 CFLAGS = -Werror -Wall
 
 .PHONY: clean start all
