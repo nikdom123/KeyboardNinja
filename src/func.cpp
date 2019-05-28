@@ -1,7 +1,14 @@
 #include "func.h"
 
+#define X 40
+#define Y 10
+
 void Eng(int i)
 {
+    system("CLS");
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    COORD position = {0, Y};
+    SetConsoleCursorPosition(hConsole, position);
     srand(time(NULL));
     int l = rand() % 10, k = 0;
     FILE* eng;
@@ -66,20 +73,28 @@ void Eng(int i)
     duration = (clock() - start) / (double)CLOCKS_PER_SEC;
     spers = sims / (duration / 60);
     correct = ((double)(sims - mistakes) / sims) * 100;
-    cout << "\n\n Teoretical correctness: " << Tcorrect << endl;
-    cout << "Teoretical time" << Ttime << endl;
 
-    cout << "\n\n Correctness : " << correct << " %" << endl;
-    cout << " time: " << duration << " seconds" << endl;
-    cout << " number of mistakes: " << mistakes << endl;
-    cout << " maximum error free series: " << max_series << endl;
-    cout << " symbols per minute: " << spers << endl;
+    system("CLS");
+    position = {0, Y};
+    SetConsoleCursorPosition(hConsole, position);
+
+    cout << "\n\n \t\t\t\tTeoretical correctness: " << Tcorrect << endl;
+    cout << " \t\t\t\tTeoretical time" << Ttime << endl;
+    cout << "\n\n \t\t\t\tCorrectness : " << correct << " %" << endl;
+    cout << " \t\t\t\ttime: " << duration << " seconds" << endl;
+    cout << " \t\t\t\tnumber of mistakes: " << mistakes << endl;
+    cout << " \t\t\t\tmaximum error free series: " << max_series << endl;
+    cout << " \t\t\t\tsymbols per minute: " << spers << endl << "\n\n";
     system("pause");
 }
 
 void Rus(int i)
 {
     system("chcp 1251");
+    system("CLS");
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    COORD position = {0, Y};
+    SetConsoleCursorPosition(hConsole, position);
     srand(time(NULL));
     int l = rand() % 10, k = 0;
     FILE* rus;
@@ -144,13 +159,16 @@ void Rus(int i)
     duration = (clock() - start) / (double)CLOCKS_PER_SEC;
     spers = sims / (duration / 60);
     correct = ((double)(sims - mistakes) / sims) * 100;
-    cout << "\n\n Teoretical correctness: " << Tcorrect << endl;
-    cout << "Teoretical time" << Ttime << endl;
 
-    cout << "\n\n Correctness : " << correct << " %" << endl;
-    cout << " time: " << duration << " seconds" << endl;
-    cout << " number of mistakes: " << mistakes << endl;
-    cout << " maximum error free series: " << max_series << endl;
-    cout << " symbols per minute: " << spers << endl;
+    system("CLS");
+    position = {0, Y};
+    SetConsoleCursorPosition(hConsole, position);
+    cout << "\n\n \t\t\t\tTeoretical correctness: " << Tcorrect << endl;
+    cout << " \t\t\t\tTeoretical time" << Ttime << endl;
+    cout << "\n\n \t\t\t\tCorrectness : " << correct << " %" << endl;
+    cout << " \t\t\t\ttime: " << duration << " seconds" << endl;
+    cout << " \t\t\t\tnumber of mistakes: " << mistakes << endl;
+    cout << " \t\t\t\tmaximum error free series: " << max_series << endl;
+    cout << " \t\t\t\tsymbols per minute: " << spers << endl << "\n\n";
     system("pause");
 }

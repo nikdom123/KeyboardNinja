@@ -1,7 +1,7 @@
 #include "menu.h"
 
 #define X 40
-#define Y 10
+#define Y 13
 
 void Level(int lang)
 {

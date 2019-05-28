@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <string>
 #include <time.h>
+#include <windows.h>
 using namespace std;
 
 void Eng(int i);
