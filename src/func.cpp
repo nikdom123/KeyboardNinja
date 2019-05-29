@@ -3,6 +3,28 @@
 #define X 40
 #define Y 10
 
+int time(int i, int sims, double duration)
+{
+    double Ttime;
+    switch (i) {
+    case 1:
+        Ttime = (double)(sims * 1);
+        break;
+    case 2:
+        Ttime = (double)(sims * 0.3);
+        break;
+    case 3:
+        Ttime = (double)(sims * 0.1);
+        break;
+    }
+    cout << "\n\n \t\t\t\tteoretical time: " << Ttime << " seconds" << endl;
+    cout << " \t\t\t\tyour value: " << duration << " seconds" << endl;
+    if (duration <= Ttime)
+        return 0;
+    else
+        return 1;
+}
+
 void Eng(int i)
 {
     system("CLS");
@@ -79,6 +101,7 @@ void Eng(int i)
     position = {0, Y};
     SetConsoleCursorPosition(hConsole, position);
 
+    time(i, sims, duration);
     cout << "\n\n \t\t\t\tTeoretical correctness: " << Tcorrect << endl;
     cout << " \t\t\t\tTeoretical time" << Ttime << endl;
     cout << "\n\n \t\t\t\tCorrectness : " << correct << " %" << endl;
