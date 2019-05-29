@@ -17,7 +17,7 @@ int time(int i, int sims, double duration)
         Ttime = (double)(sims * 0.1);
         break;
     }
-    cout << "\n\n \t\t\t\tteoretical time: " << Ttime << " seconds" << endl;
+    cout << " \t\t\t\tteoretical time: " << Ttime << " seconds" << endl;
     cout << " \t\t\t\tyour value: " << duration << " seconds" << endl;
     if (duration <= Ttime)
         return 0;
@@ -40,7 +40,7 @@ int correctness(int i, int sims, int mistakes)
         break;
     }
     int Rcorrect = ((double)(sims - mistakes) / sims) * 100;
-    cout << "\n\n \t\t\t\tteoretical correctness: " << Tcorrect << "%" << endl;
+    cout << " \n\n\t\t\t\tteoretical correctness: " << Tcorrect << "%" << endl;
     cout << " \t\t\t\tyour value: " << Rcorrect << "%" << endl;
     if (Rcorrect >= Tcorrect)
         return 0;
@@ -53,17 +53,17 @@ int spers(int i, int sims, double duration)
     double Tspers;
     switch (i) {
     case 1:
-        Tspers = 120;
+        Tspers = 100;
         break;
     case 2:
-        Tspers = 250;
+        Tspers = 200;
         break;
     case 3:
-        Tspers = 500;
+        Tspers = 400;
         break;
     }
     double Rspers = sims / (duration / 60);
-    cout << "\n\n \t\t\t\tteoretical symbols per minute: " << Tspers << endl;
+    cout << " \n\n\t\t\t\tteoretical symbols per minute: " << Tspers << endl;
     cout << " \t\t\t\tyour value: " << Rspers << endl;
     if (Rspers >= Tspers)
         return 0;
@@ -102,7 +102,6 @@ void Eng(int i)
     k = 0;
     l = 0;
     clock_t start; // variable declaration
-    // double duration, spers, correct, Tcorrect, Ttime;
     double duration;
     start = clock(); // start "timer"
     while (l < n) {
@@ -125,39 +124,22 @@ void Eng(int i)
         }
     }
     duration = (clock() - start) / (double)CLOCKS_PER_SEC;
-    /*switch (i) {
-    case 1:
-        Tcorrect = 50;
-        Ttime = (double)(sims * 1);
-        break;
-    case 2:
-        Tcorrect = 80;
-        Ttime = (double)(sims * 0.3);
-        break;
-    case 3:
-        Tcorrect = 99;
-        Ttime = (double)(sims * 0.1);
-        break;
-    }*/
     if (series > max_series) // re-check: if no errors were made
         max_series = series;
-    //spers = sims / (duration / 60);
-    // correct = ((double)(sims - mistakes) / sims) * 100;
-
     system("CLS");
     position = {0, Y};
     SetConsoleCursorPosition(hConsole, position);
 
-    time(i, sims, duration);
-    correctness(i, sims, mistakes);
-    spers(i, sims, duration);
-    // cout << "\n\n \t\t\t\tTeoretical correctness: " << Tcorrect << endl;
-    // cout << " \t\t\t\tTeoretical time" << Ttime << endl;
-    // cout << "\n\n \t\t\t\tCorrectness : " << correct << " %" << endl;
-    // cout << " \t\t\t\ttime: " << duration << " seconds" << endl;
-    cout << " \t\t\t\tnumber of mistakes: " << mistakes << endl;
+    int result;
+    result = time(i, sims, duration);
+    result += correctness(i, sims, mistakes);
+    result += spers(i, sims, duration);
+    cout << " \n\n\t\t\t\tnumber of mistakes: " << mistakes << endl;
     cout << " \t\t\t\tmaximum error free series: " << max_series << endl;
-    //cout << " \t\t\t\tsymbols per minute: " << spers << endl << "\n\n";
+    if (result == 0)
+        cout << " \n\t\t\tYou have passed this level of difficulty \n\n";
+    else
+        cout << " \n\t\t\tYou could not pass this level of difficulty \n\n";
     system("pause");
 }
 
