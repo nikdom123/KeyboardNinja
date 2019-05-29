@@ -47,6 +47,7 @@ void Eng(int i)
             cout << ch;
             series++;
         } else { // if the wrong key is pressed
+            Beep(523, 100);
             mistakes++;
             sims++;
             if (series > max_series)
@@ -133,6 +134,7 @@ void Rus(int i)
             cout << ch;
             series++;
         } else { // if the wrong key is pressed
+            Beep(523, 100);
             mistakes++;
             sims++;
             if (series > max_series)
