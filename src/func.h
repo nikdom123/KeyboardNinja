@@ -9,6 +9,9 @@
 #include <windows.h>
 using namespace std;
 
+int time(int i, int sims, double duration);
+int correctness(int i, int sims, int mistakes);
+int spers(int i, int sims, double duration);
 void Eng(int i);
 void Rus(int i);
 
